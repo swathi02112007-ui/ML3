@@ -9,44 +9,15 @@ To write a program to predict the profit of a city using the linear regression m
 
 ## Algorithm
 
-Step 1: Start
-Step 2: Import Libraries
-Import numpy, pandas, and StandardScaler from sklearn.
-Step 3: Load Dataset
-Read the CSV file using pandas.read_csv().
-Read the CSV file using pandas.read_csv().
-X → Independent variables (all columns except the last).
-y → Dependent variable (last column).
-Step 4: Preprocess Data
-Standardize the features (X) using StandardScaler to improve convergence.
-Add a bias column (column of ones) to X for the intercept term.
-Step 5: Initialize Parameters
-Set all model parameters θ (theta) to zero.
-Choose a learning rate (α) and number of iterations.
-Step 6: Hypothesis Function
-image
-Where:
-X is the feature matrix (with bias column).
-θ is the parameter vector.
-Step 7: Cost Function (Mean Squared Error)
-WhatsApp Image 2025-09-13 at 14 37 25_2eab0dec
+1: Load and Normalize DataX = (X - mean(X)) / std(X)
 
-Step 8: Gradient Descent Update Rule
-Repeat for the chosen number of iterations:
-image
-Step 9: Model Training
-1.Run gradient descent loop until parameters converge (or max iterations reached).
-2.Final learned values of θ represent the trained model.
-Step 10: Prediction
-For new input data:
-1.Scale the features using the same scaler as training.
-2.Add the bias term.
-3.Compute:
-image
-Step 11: Output
-Print learned parameters.
-Print predicted output for new test data.
-Step 12: End
+2: Initialize Parametersm = 0b = 0learning_rate = αepochs = Nn = number of samples
+
+3: Predict Outputy_pred = m * X + b
+
+4: Compute Gradientsdm = (-2/n) * Σ [ X * (y - y_pred) ]db = (-2/n) * Σ [ (y - y_pred) ]
+
+5: Update Parameters (repeat for each epoch)m = m - α * dmb = b - α * db
 
 ## Program:
 ```
